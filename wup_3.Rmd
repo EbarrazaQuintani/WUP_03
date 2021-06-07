@@ -27,7 +27,14 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 ```{r}
 basicCN + geom_boxplot()
 ```
-  
+
+When looking at these boxplots, the first thing to notice is how much bigger the back boxplot is and that the middle box has many outliers. While the front box is smaller than the middle and back box however the front is a lot closer to the middle than the back box.
+
+```{r}
+boxplot(alcohol~Seat,data=davisdata)
+``` 
+
+The box that represents the back is larger which means that they tend to drink more compared to the middle and front. The middle and front boxes mean that they do not drink as much compared to the back and that 75% of the people in the back are more likely to drink. Which also means that the back are more likely to consumer over 10 ounces of alcohol which is a lot more compared to the front and back of the class.
   
 ### get fancy  
 
@@ -35,9 +42,24 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
-## Numerical Summarys 
+Looking at the box-plot, we may reject the null hypothesis. There is a difference on how many ounces of alcohol is being consumed between the three rows of the class room. The back row consumes more alcohol than the front and middle row just by the size of the box 
 
+## Numerical Summarys 
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+The back row's mean is nearly nine times higher than the mean of the front row. The back row's mean is 9.62 and the front row is 1.80. And it is nearly three times higher of than the the mean of the middle row of 3.28
 ## Inferential Tests
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+We will reject the null hypothesis, however we will seek clarification to see which rows are different than the others.
+
+```{r}
+plot(TukeyHSD(model1))
+```
 
 ## Conclusions
 
