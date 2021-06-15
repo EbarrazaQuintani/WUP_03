@@ -56,9 +56,13 @@ model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
 
-We will reject the null hypothesis, however we will seek clarification to see which rows are different than the others.  
+We will reject the null hypothesis, however we will seek clarification to see which rows are different than the others. Our null hypothesis was that there was no difference between all three rows and their alcohol consumption. Since it shows that the p-value is a 0.000116, the number is very low and it represents that there is a low chance of this occurring again.
 
+```{r}
+plot(TukeyHSD(model1))
+```
 
+The plot we just ran shows us that the middle-front are completely different from the front-back and middle-front. There is a difference at least between two rows when it comes to alcohol consumption.
 
 ## Conclusions
 
