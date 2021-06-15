@@ -66,4 +66,4 @@ The plot we just ran shows us that the middle-front are completely different fro
 
 ## Conclusions
 
-
+The null hypothesis was that there was no difference between the three rows of a classroom and their alcohol consumption. From our boxplots first showing how the back row consumes more ounces of alcohol when compared to the middle and front rows of the classroom. Then we had a fancy notch boxplot which backed up what the original boxplot had shown. The we ran our numerical summary which also showed a difference. The means between all three rows were completely different from each other. The back row had a mean of 9.625000 which was the highest and more than three times than the middle row at 3.283133 and nearly 9 times higher than the front row which was 1.803030. After running the aov model and seeing how low the p-value was at 0.000116, we decided to reject the null hypothesis. Than the Tukey model showed us that there is a difference between two rows and their alcohol consumption.
