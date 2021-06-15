@@ -48,18 +48,17 @@ Looking at the box-plot, we may reject the null hypothesis. There is a differenc
 ```{r}
 favstats(alcohol~Seat,data=davisdata)
 ```
-The back row's mean is nearly nine times higher than the mean of the front row. The back row's mean is 9.62 and the front row is 1.80. And it is nearly three times higher of than the the mean of the middle row of 3.28
+The back row's mean is nearly nine times higher than the mean of the front row. The back row's mean is 9.62 and the front row is 1.80. And it is nearly three times higher of than the the mean of the middle row of 3.28. 
+  
 ## Inferential Tests
 ```{r}
 model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
 
-We will reject the null hypothesis, however we will seek clarification to see which rows are different than the others.
+We will reject the null hypothesis, however we will seek clarification to see which rows are different than the others.  
 
-```{r}
-plot(TukeyHSD(model1))
-```
+
 
 ## Conclusions
 
